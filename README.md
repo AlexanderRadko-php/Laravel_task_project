@@ -18,7 +18,7 @@ composer update
 
 composer install
 
-Создать нужные таюлицы в базе данных </br>
+Создать нужные таблицы в базе данных </br>
 
 php artisan migrate
 
