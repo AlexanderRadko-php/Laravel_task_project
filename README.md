@@ -22,6 +22,10 @@ composer install
 
 php artisan migrate
 
+Генерируем ключ </br>
+
+php artisan key:generate
+
 Запустить локальный сервер </br>
 
 php artisan serve
