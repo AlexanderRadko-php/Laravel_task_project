@@ -10,13 +10,13 @@ cd Test_admin_panel
 
 Скопировать файл .env.example и сщздать файл .env, в котором указать название таблицы, логин и пароль для базы данных </br>
 
-Обновить composer </br>
-
-composer update
-
-Или установить, если он еще не установлен </br>
+Установить composer </br>
 
 composer install
+
+Или обновить, если composer уже установлен </br>
+
+composer update
 
 Создать нужные таблицы в базе данных </br>
 
