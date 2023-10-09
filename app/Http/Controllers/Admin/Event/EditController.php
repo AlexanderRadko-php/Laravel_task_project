@@ -14,6 +14,6 @@ class EditController extends BaseController
         $events = Events::all();
         $myEventsIds = EventsUsers::where('user_id', '=', auth()->user()->id)->get()->pluck('event_id');
         $myEvents = Events::find($myEventsIds);
-        return view('admin.event.edit', compact('event', 'events', 'myEvents'));  
+        return view('admin.event.edit', compact('event', 'events', 'myEvents'));
     }
 }

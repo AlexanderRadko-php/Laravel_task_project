@@ -18,6 +18,12 @@ class StoreController extends BaseController
         $userId = auth()->user()->id;
         $eventId = $event->id;
 
+//        dd($request);
+//        dd($data);
+//        dd($event);
+//        dd($userId);
+//        dd($eventId);
+
         EventsUsers::firstOrCreate([
             'user_id' => $userId,
             'event_id' => $eventId,

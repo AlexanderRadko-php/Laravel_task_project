@@ -24,7 +24,9 @@ class StroreRequest extends FormRequest
         return [
             'title' => 'required|string',
             'content' => 'required|string',
-            'eventDate' => 'required',
+            'eventTime' => 'required|string',
+            'eventType' => 'required',
+            'eventStatus' => 'required',
             'creator_id' => '',
         ];
     }
@@ -35,6 +37,8 @@ class StroreRequest extends FormRequest
             'title.string' => 'Данные не являются строкой',
             'content.string' => 'Данные не являются строкой',
             'content.required' => 'Это поле обязательно для заполнения',
+            'eventTime.string' => 'Данные не являются строкой',
+            'eventTime.required' => 'Это поле обязательно для заполнения',
         ];
     }
 }

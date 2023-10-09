@@ -1,12 +1,11 @@
 @extends('admin.layouts.main')
 @section('content')
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h3>Все события</h3>
+                        <h3>Все задачи</h3>
                     </div>
                 </div>
             </div>
@@ -14,22 +13,23 @@
 
         <section class="content">
             <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-1 mb-3">
+                    <div class="col-3 mb-3" style="min-width: 150px;">
                         <a href="{{ route('admin.event.create') }}" class="btn btn-block btn-primary mb 3">Добавить </a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body table-responsive p-0" id="list">
                                 <table class="table table-hover text-nowrap data-table">
                                     <thead class="text-center">
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Название события</th>
-                                            <th>Дата события</th>
+                                            <th>№</th>
+                                            <th>Название</th>
+                                            <th>Срок выполнения</th>
+                                            <th>Статус</th>
+                                            <th>Тип задачи</th>
                                             <th colspan="3">Действие</th>
                                         </tr>
                                     </thead>
@@ -38,17 +38,19 @@
                                             <tr>
                                                 <td>{{ $event->id }}</td>
                                                 <td>{{ $event->title }}</td>
-                                                <td>{{ $event->eventDate }}</td>
-                                                
+                                                <td>{{ $event->eventTime }}</td>
+                                                <td>{{ $event->eventStatus }}</td>
+                                                <td>{{ $event->eventType }}</td>
+
                                                 @if ((int) auth()->user()->id == $event->creator_id)
-                                                <td class="text-center"><a
+                                                <td class="text-center" style="padding-left: 0; padding-right: 0;"><a
                                                     href="{{ route('admin.event.show', $event->id) }}"><i
                                                         class="far fa-eye"></i></a>
                                                     </td>
-                                                    <td class="text-center"><a
+                                                    <td class="text-center" style="padding-left: 0; padding-right: 0;"><a
                                                             href="{{ route('admin.event.edit', $event->id) }}"
                                                             class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
-                                                    <td class="text-center">
+                                                    <td class="text-center" style="padding-left: 0; padding-right: 0;">
                                                         <form action="{{ route('admin.event.delete', $event->id) }} "
                                                             method="POST">
                                                             @csrf
@@ -62,7 +64,7 @@
                                                     <td class="text-center" colspan="3"><a
                                                         href="{{ route('admin.event.show', $event->id) }}"><i
                                                             class="far fa-eye"></i></a>
-                                                        </td>  
+                                                        </td>
                                                 @endif
                                             </tr>
                                         @endforeach
@@ -78,22 +80,12 @@
     </div>
     </section>
     </div>
-    
+
     </div>
     </section>
-    <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2023.</strong>
-        All rights reserved.
-    </footer>
-
-    <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
     </aside>
-    <!-- /.control-sidebar -->
     </div>
 
 @endsection

@@ -1,10 +1,5 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a class="brand-link" style="margin-left: 15px" href="{{ route('admin.user.show', auth()->user()->id)}}">
-        <span class="brand-text font-weight-light">{{auth()->user()->name}}</span>
-    </a>
+<aside class="main-sidebar elevation-4" style="background: #757575; padding-top: 50px;">
 
-    <!-- Sidebar -->
     <div class="sidebar">
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -13,7 +8,7 @@
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-clipboard"></i>
                         <p>
-                            Все события
+                            Все задачи
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -32,7 +27,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-clipboard"></i>
                         <p>
-                            Мои события
+                            Мои задачи
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>

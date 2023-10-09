@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
-    
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -43,7 +43,6 @@
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Left navbar links -->
             <div class="col-12 d-flex justify-content-between">
             <ul class="navbar-nav">
                 <li class="nav-item d-none d-sm-inline-block">
@@ -54,8 +53,13 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+                <li class="nav-item" style="display: flex; flex-direction: row; align-items: center;">
+                    <a class="brand-link" style="margin-left: 15px; width: auto; padding: 0; margin-right: 30px; font-size: 30px;" href="{{ route('admin.user.show', auth()->user()->id)}}">
+                        <span class="brand-text font-weight-light">{{auth()->user()->name}}</span>
+                    </a>
+                </li>
                 <li class="nav-item">
-                    <form action="{{route('logout')}}" method="POST">
+                    <form action="{{route('logout')}}" method="POST" style="margin-top: 5px;">
                         @csrf
                     <input class="btn btn-outline-primary" type="submit" value="Выйти">
                     </form>
@@ -78,7 +82,7 @@
         <script>
             $.widget.bridge('uibutton', $.ui.button)
         </script>
-        
+
         <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
         <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>

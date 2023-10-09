@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h3>Редактирование данных о пользователе</h3>
-                        <form action="{{ route('admin.user.update', $user->id) }}" method="POST" class="w-25">
+                        <form action="{{ route('admin.user.update', $user->id) }}" method="POST" class="w-50">
                             @csrf
                             @method('PATCH')
                             <div class="form-group">

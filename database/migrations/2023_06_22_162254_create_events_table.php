@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->date('eventDate');
+            $table->text('eventTime');
+            $table->text('eventType');
+            $table->text('eventStatus');
             $table->unsignedBigInteger('creator_id');
             $table->timestamps();
         });
