@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6 d-flex align-items-center">
-                    <h3 class="m-0 mr-2">{{ $event->title }}</h3>
+                    <h3 class="m-0 mr-2"><span>Задача №</span> {{ $event->id }} </h3>
                     @if ((int) auth()->user()->id == $event->creator_id)
                     <a href="{{ route('admin.event.edit', $event->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a>
                     <td>
@@ -41,8 +41,16 @@
                                         <td>{{ $event->content }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Дата события</td>
-                                        <td>{{ $event->eventDate }}</td>
+                                        <td>Срок выполнения</td>
+                                        <td>{{ $event->eventTime }} <span> ч</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Статус</td>
+                                        <td>{{ $event->eventStatus }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тип задачи</td>
+                                        <td>{{ $event->eventType }}</td>
                                     </tr>
                                     <tr>
                                         <td>Действие</td>
@@ -52,14 +60,14 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" id="delete-follow-{{ $event->id }}" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i> Отказаться от участия
+                                                    <i class="fa fa-btn fa-trash"></i> Отказаться от задачи
                                                 </button>
                                             </form>
                                             @else
                                             <form action="{{route('follow', $event->id)}}" method="POST">
                                                 @csrf
                                                 <button type="submit" id="follow-user-{{ $event->id }}" class="btn btn-success">
-                                                    <i class="fa fa-btn fa-user" ></i> Принять участие
+                                                    <i class="fa fa-btn fa-user" ></i> Взять себе
                                                 </button>
                                             </form>
                                             @endif
@@ -80,7 +88,7 @@
                                 <tbody>
                                     @foreach ($members as $member)
                                     <tr>
-                                        <td><a href="{{ route('admin.user.show', $member->id)}}">{{$member->name}}</a></td>
+                                        <td><a href="{{ route('admin.user.show', $member->id)}}">{{$member->name}} {{$member->secondName}}</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -94,20 +102,14 @@
 </div>
 </section>
 </div>
-</div><!-- /.container-fluid -->
-</section>
-<!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
-<footer class="main-footer">
-    <strong>Copyright &copy; 2023.</strong>
-    All rights reserved.
-</footer>
+</section>
 
-<!-- Control Sidebar -->
+</div>
+
 <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
+
 </aside>
-<!-- /.control-sidebar -->
+
 </div>
 @endsection

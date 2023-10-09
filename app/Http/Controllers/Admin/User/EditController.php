@@ -12,7 +12,6 @@ class EditController extends Controller
     public function __invoke(User $user)
     {
         $events = Events::all();
-        dd($events);
         $myEventsIds = EventsUsers::where('user_id', '=', auth()->user()->id)->get()->pluck('event_id');
         $myEvents = Events::find($myEventsIds);
         return view('admin.user.edit', compact('user', 'events', 'myEvents'));

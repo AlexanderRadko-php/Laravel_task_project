@@ -1,9 +1,10 @@
-<aside class="main-sidebar elevation-4" style="background: #757575; padding-top: 50px;">
+<aside class="main-sidebar elevation-4" style="background: #757575; padding-top: 20px;">
 
     <div class="sidebar">
+        <h1 class="text-center" style="color: #00cd5a;">Easy task</h1>
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+                data-accordion="false" style="margin-top: 20px;">
                 <li class="nav-item">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-clipboard"></i>

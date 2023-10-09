@@ -22,17 +22,14 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string',
             'content' => 'required|string',
-            'eventDate' => 'required',
+            'eventStatus' => '',
             'creator_id' => '',
         ];
     }
     public function messages()
     {
         return [
-            'title.required' => 'Это поле обязательно для заполнения',
-            'title.string' => 'Данные не являются строкой',
             'content.string' => 'Данные не являются строкой',
             'content.required' => 'Это поле обязательно для заполнения',
             'member_id' => '',

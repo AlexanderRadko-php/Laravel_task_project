@@ -46,16 +46,17 @@
             <div class="col-12 d-flex justify-content-between">
             <ul class="navbar-nav">
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{route('admin.event.index')}}" class="nav-link">Все события</a>
+                    <a href="{{route('admin.event.index')}}" class="nav-link">Список задач</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{route('admin.event.create')}}" class="nav-link">Создать событие</a>
+                    <a href="{{route('admin.event.create')}}" class="nav-link">Создать новую задачу</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item" style="display: flex; flex-direction: row; align-items: center;">
                     <a class="brand-link" style="margin-left: 15px; width: auto; padding: 0; margin-right: 30px; font-size: 30px;" href="{{ route('admin.user.show', auth()->user()->id)}}">
                         <span class="brand-text font-weight-light">{{auth()->user()->name}}</span>
+                        <span class="brand-text font-weight-light">{{auth()->user()->secondName}}</span>
                     </a>
                 </li>
                 <li class="nav-item">

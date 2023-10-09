@@ -22,9 +22,9 @@ class StroreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string',
             'content' => 'required|string',
-            'eventDate' => 'required',
+            'eventStatus' => '',
+            'creator_id' => '',
         ];
     }
     public function messages()

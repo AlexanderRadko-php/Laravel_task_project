@@ -37,20 +37,14 @@
             </div>
         </section>
     </div>
-    </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2023.</strong>
-        All rights reserved.
-    </footer>
+    </section>
 
-    <!-- Control Sidebar -->
+    </div>
+
     <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
+
     </aside>
-    <!-- /.control-sidebar -->
+
     </div>
 @endsection
