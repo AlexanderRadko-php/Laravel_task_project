@@ -4,7 +4,7 @@
 
 Чтобы развернуть проект, нужно выполнить следующие команды: </br>
 
-git clone https://github.com/AlexanderRadko-php/Test_admin_panel.git
+git clone https://github.com/AlexanderRadko-php/Laravel_task_project.git
 
 Переходим в проект </br>
 
