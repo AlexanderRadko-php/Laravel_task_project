@@ -10,7 +10,7 @@ git clone https://github.com/AlexanderRadko-php/Laravel_task_project.git
 
 cd Test_admin_panel
 
-Скопировать файл .env.example и сщздать файл .env, в котором указать название таблицы, логин и пароль для базы данных </br>
+Скопировать файл .env.example и создать файл .env, в котором указать название таблицы, логин и пароль для базы данных </br>
 
 Установить composer </br>
 
